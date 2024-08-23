@@ -1,0 +1,14 @@
+# This is Same as the namespace
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: dasboard-ingress
+  namespace: ingress-nginx
+spec:
+  rules:
+  - host: dashboard.com
+  - http:
+      paths:
+      - backend:
+          serviceName: ingress-nginx-controller-admission
+          servicePort: 80
